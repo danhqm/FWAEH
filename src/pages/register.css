@@ -7,13 +7,32 @@
 }
 
 /* --- HEADER STYLES --- */
+.logo {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start; /* Keeps the logo aligned to the left edge */
+}
+
+.nav-links a {
+  display: flex;
+  gap: 2rem;
+  font-weight: 600;
+}
+
+.header-actions {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Pushes the search and icons flush to the right edge */
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* HEADER OVERRIDES */
 .header {
-  background-color: #000;
-  color: #eeebdd;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 1.5rem 4rem;
+  background-color: #000;
 }
 
 .logo h1 {

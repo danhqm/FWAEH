@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './register.css';
 import { FwaehLogo } from '../icons/FwaehLogo';
 
@@ -8,13 +9,21 @@ interface RegisterProps {
 }
 
 const Register: React.FC<RegisterProps> = ({ onRegister }) => {
-
-    const [newsletterOptIn, setNewsletterOptIn] = useState(false);
+  const [newsletterOptIn, setNewsletterOptIn] = useState(false);
   
-    const handleSubmit = (e: React.FormEvent) => {
-      e.preventDefault();
-      onRegister(); 
-    };
+  // 2. Initialize the hook
+  const navigate = useNavigate(); 
+  
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Run your registration logic first
+    onRegister(); 
+    
+    // 3. Immediately redirect to the landing page!
+    navigate('/landing'); 
+  };
+
   return (
     <div className="register-page">
       
