@@ -1,0 +1,238 @@
+.login-page {
+  font-family: 'Poppins', system-ui, sans-serif;
+  min-height: 100vh;
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- HEADER STYLES --- */
+.header {
+  background-color: #000;
+  color: #eeebdd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 4rem;
+}
+
+.logo h1 {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  font-size: 0.8rem;
+  font-weight: normal;
+  vertical-align: super;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.nav-links a {
+  cursor: pointer;
+}
+
+.nav-links .active {
+  border-bottom: 2px solid #eeebdd;
+  padding-bottom: 4px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  gap: 0.5rem;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 120px;
+  font-size: 0.9rem;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* --- MAIN CONTENT STYLES --- */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 4rem;
+  gap: 32rem;
+}
+
+/* Left Side: Login Form */
+.login-form-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.login-form-container h2 {
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  color: #171a1f;
+}
+
+.input-group {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #000;
+  background: transparent;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  outline: none;
+  font-weight: 600;
+  font-style: italic;
+  color: #000;
+}
+
+.input-group input::placeholder {
+  color: #888;
+  font-weight: 400;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 0;
+  bottom: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color:#171a1f;
+}
+
+.password-help {
+  font-size: 0.8rem;
+  font-weight: 800;
+  font-style: italic;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: #171a1f;
+}
+
+.password-help:hover {
+  text-decoration: underline;
+}
+
+.login-btn {
+  background-color: #D84040; /* Red matching the design */
+  color: white;
+  border: none;
+  padding: 0.9rem 3.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 2rem;
+  transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+  background-color: #b03030;
+}
+
+.signup-prompt {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.signup-prompt .bold-italic {
+  font-weight: 800;
+  font-style: italic;
+  font-size: 0.9rem;
+    color: #171a1f;
+}
+
+.signup-prompt .light-italic {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #444;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.signup-prompt .light-italic:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* Right Side: Order Lookup Card */
+.order-lookup-card {
+  background-color: #000;
+  color: #fff;
+  padding: 4rem 2.5rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.order-lookup-card h3 {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.order-lookup-card p {
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+  color: #e0e0e0;
+}
+
+.find-order-btn {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s;
+}
+
+.find-order-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
