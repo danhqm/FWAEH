@@ -1,6 +1,7 @@
 import React from 'react';
 import './login.css';
 import { Link } from 'react-router-dom';
+import { FwaehLogo } from '../icons/FwaehLogo';
 
 interface LoginProps {
   onLogin: () => void;
@@ -19,7 +20,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
       {/* HEADER SECTION */}
       <header className="header">
         <div className="logo">
-          <h1>FWAEH<span>©</span></h1>
+          <FwaehLogo width={120} color="#FFFF" /><span>©</span>
         </div>
         
         <nav className="nav-links">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import './register.css';
+import { FwaehLogo } from '../icons/FwaehLogo';
 
 interface RegisterProps {
   onRegister: () => void;
@@ -20,7 +21,7 @@ const Register: React.FC<RegisterProps> = ({ onRegister }) => {
       {/* HEADER SECTION */}
       <header className="header">
         <div className="logo">
-          <h1>FWAEH<span>©</span></h1>
+          <FwaehLogo width={120} color="#FFFF" /><span>©</span>
         </div>
         
         <nav className="nav-links">
