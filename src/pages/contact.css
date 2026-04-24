@@ -1,0 +1,320 @@
+/* Fixed the nav-links container layout */
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  font-weight: 600;
+}
+
+.nav-links a, 
+.nav-links .active {
+  color: #eeebdd;
+  cursor: pointer;
+  text-decoration: none; /* Removes the default underline from links */
+  transition: opacity 0.2s ease; /* Smooth fade when hovering */
+}
+
+/* Optional: Makes the links slightly fade when you hover over them */
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+/* --- GLOBAL CONTACT PAGE --- */
+.contact-page {
+  font-family: 'Poppins', system-ui, sans-serif;
+  background-color: #000;
+  color: #eeebdd;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- CONTACT HERO SECTION --- */
+.contact-hero-section {
+  position: relative;
+  width: 100%;
+  height: 85vh; /* Takes up most of the screen below the header */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 2px solid #630000; /* The subtle red border from your design */
+}
+
+/* Dark semi-transparent overlay */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.50); /* Adjust this 0.45 higher to make it darker */
+  z-index: 1;
+}
+
+/* Content Container */
+.contact-hero-content {
+  position: relative;
+  z-index: 2; /* Keeps text above the dark overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 4rem 8vw;
+}
+
+/* --- CENTER TEXT --- */
+.center-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transform: translateY(-20px); /* Nudges it visually into the exact center */
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-style: italic;
+  font-weight: 800;
+  color: #eeebdd; /* The beige/off-white color from your brand */
+  margin: 0;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 12px rgba(0,0,0,0.4);
+}
+
+
+/* --- BOTTOM DETAILS --- */
+.bottom-details-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* Pins everything to the bottom */
+  width: 100%;
+}
+
+.left-details p {
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 500;
+  color: #eeebdd;
+  margin: 0;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+}
+
+.right-details {
+  display: flex;
+  gap: 3.5rem;
+}
+
+.detail-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.detail-block h4 {
+  font-size: 0.85rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 0.5px;
+  color: #eeebdd;
+}
+
+.detail-block p,
+.detail-block a {
+  font-size: 14px;
+  color: #eeebdd;
+  margin: 0;
+  text-decoration: none;
+  border-bottom: 1px solid #eeebdd; 
+  padding-bottom: 5px; /* Gives a little breathing room below the text */
+  padding-right: 3rem; /* THIS is the magic line that extends the underline */
+  display: inline-block;
+  transition: opacity 0.2s ease;
+}
+
+/* --- CONTACT FORM SECTION (Dark Red) --- */
+.contact-form-section {
+  background-color: #5c0505; /* Matches your specific dark red */
+  padding: 6rem 8vw;
+  width: 100%;
+}
+
+.contact-form-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 6rem; /* Keeps the columns from touching */
+}
+
+/* --- LEFT COLUMN: INFO --- */
+.contact-info-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-subtitle {
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 300;
+  margin: 0 0 1rem 0;
+  color: #edece8;
+}
+
+.info-email {
+  font-size: 3.8rem;
+  font-style: italic;
+  font-weight: 900;
+  margin: 0 0 2rem 0;
+  color: #edece8;
+  letter-spacing: 1px;
+}
+
+.info-hours {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  font-style: italic;
+  font-weight: 300;
+  color: #edece8;
+  width: 90%; /* Keeps it aligned nicely under the email */
+}
+
+/* --- RIGHT COLUMN: FORM --- */
+.contact-form-col {
+  flex: 1;
+}
+
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* Space between each form row */
+}
+
+.form-row.split-row {
+  display: flex;
+  gap: 2rem;
+}
+
+.split-row .form-group {
+  flex: 1; /* Makes First Name and Last Name take up exactly 50% each */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* The Minimalist Input Field Styling */
+.form-group input {
+  background-color: transparent; /* Makes the box invisible */
+  border: none; /* Removes the box walls */
+  border-bottom: 1px solid #fff; /* Leaves only the bottom line */
+  color: #fff;
+  padding: 0.5rem 0;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 1rem;
+  outline: none; /* Removes the blue glow when clicked */
+  transition: border-color 0.3s ease;
+}
+
+/* Optional: Makes the line slightly thicker/brighter when you click to type */
+.form-group input:focus {
+  border-bottom: 2px solid #fff; 
+}
+
+/* --- FOOTER SECTION (White) --- */
+.footer-light {
+  background-color: #fff;
+  color: #000;
+  padding: 5rem 10vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem; /* Spacing between columns */
+}
+
+.footer-col {
+  flex: 1; 
+}
+
+/* Gives the newsletter slightly more width so the text fits nicely */
+.footer-newsletter {
+  flex: 1.5; 
+}
+
+.footer-col h4 {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* Vertical spacing between links */
+}
+
+.footer-col a {
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: opacity 0.2s;
+}
+
+.footer-col a:hover {
+  opacity: 0.7;
+}
+
+/* Newsletter Specifics */
+.footer-newsletter p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 1.5rem 0;
+}
+
+.newsletter-input-group {
+  display: flex;
+  width: 100%;
+  border: 1px solid #000; /* The black box around both inputs */
+}
+
+.newsletter-input-group input {
+  flex: 1; /* Takes up all remaining space */
+  padding: 0.8rem 1rem;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+.newsletter-input-group button {
+  background: #fff;
+  color: #000;
+  border: none;
+  border-left: 1px solid #000; /* The dividing line */
+  padding: 0 1.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.newsletter-input-group button:hover {
+  background: #000;
+  color: #fff;
+}

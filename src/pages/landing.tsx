@@ -65,9 +65,9 @@ const Landing: React.FC = () => {
         </div>
         
         <nav className="nav-links">
-          <a className="active">Home</a>
-          <a>Product</a>
-          <a>Contact</a>
+          <Link to="/" className="active">Home</Link>
+          <Link to="/product">Product</Link>
+          <Link to="/contact">Contact</Link>
         </nav>
 
         <div className="header-actions">
@@ -206,6 +206,74 @@ const Landing: React.FC = () => {
         </div>
 
       </section>
+
+      {/* UPCOMING TRENDS SECTION */}
+      <section className="upcoming-trends-section">
+        
+        {/* Left Column: Text */}
+        <div className="trends-text">
+          <h2 className="trends-heading">UPCOMING<br/>TRENDS</h2>
+          <p className="trends-subtext">Stay tuned!</p>
+        </div>
+
+        {/* Right Column: Images */}
+        <div className="trends-image-grid">
+          <div className="trend-image-wrapper">
+            {/* Replace this src with your own imported image later! */}
+            <img src="https://images.unsplash.com/photo-1520045892732-304bc3ac5d8e?auto=format&fit=crop&q=80&w=800" alt="Upcoming Trend 1" className="trend-img" />
+          </div>
+          <div className="trend-image-wrapper">
+            {/* Replace this src with your own imported image later! */}
+            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=400" alt="Upcoming Trend 2" className="trend-img" />
+          </div>
+        </div>
+
+      </section>
+
+      {/* FOOTER SECTION */}
+      <footer className="footer-light">
+        
+        {/* Column 1: Customer Service */}
+        <div className="footer-col">
+          <h4>CUSTOMER SERVICE</h4>
+          <ul>
+            <li><Link to="/faq">FAQ</Link></li>
+            <li><Link to="/shipping">Shipping & Returns</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
+        </div>
+
+        {/* Column 2: Company */}
+        <div className="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><Link to="/disclaimer">Disclaimer</Link></li>
+            <li><Link to="/cookies">Cookie Statement</Link></li>
+            <li><Link to="/terms">Terms and Conditions</Link></li>
+          </ul>
+        </div>
+
+        {/* Column 3: Account */}
+        <div className="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><Link to="/register">Register</Link></li>
+            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/orders">My Orders</Link></li>
+          </ul>
+        </div>
+
+        {/* Column 4: Newsletter */}
+        <div className="footer-col footer-newsletter">
+          <h4>News Letter</h4>
+          <p>Subscribe to our newsletter and stay updated on the latest collections and special offers</p>
+          <div className="newsletter-input-group">
+            <input type="email" placeholder="Join our mailing list" />
+            <button type="submit">SUBSCRIBE</button>
+          </div>
+        </div>
+
+      </footer>
 
     </div>
   );

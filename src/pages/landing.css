@@ -27,8 +27,17 @@
   font-weight: 600;
 }
 
-.nav-links a {
+.nav-links a, 
+.nav-links .active {
+  color: #eeebdd;
   cursor: pointer;
+  text-decoration: none; /* Removes the default underline from links */
+  transition: opacity 0.2s ease; /* Smooth fade when hovering */
+}
+
+/* Optional: Makes the links slightly fade when you hover over them */
+.nav-links a:hover {
+  opacity: 0.7;
 }
 
 .header-actions {
@@ -344,8 +353,157 @@
   font-size: 0.9rem; 
   font-weight: 500;
   transition: opacity 0.2s;
+  margin-top: auto;
 }
 
 .info-column a:hover {
   opacity: 0.8;
+}
+
+.upcoming-trends-section {
+  background-color: #000;
+  padding: 6rem 10vw;
+  display: flex;
+  align-items: center; /* Vertically centers the text with the images */
+  justify-content: space-between;
+  gap: 4rem; /* Space between the text column and the image column */
+}
+
+.trends-text {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* Space between the heading and "Stay tuned!" */
+}
+
+.trends-heading {
+  font-size: 3.8rem;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0;
+  color: #edece8; /* The off-white/beige color from your design */
+  letter-spacing: 1px;
+}
+
+.trends-subtext {
+  font-size: 1rem;
+  color: #fff;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Container for the two images */
+.trends-image-grid {
+  width: 65%;
+  display: flex;
+  height: 400px; /* Locks the height so the images stay consistent */
+  background-color: #f3f4f6; /* Light grey placeholder background */
+}
+
+.trend-image-wrapper {
+  flex: 1; /* Makes both image boxes exactly 50% width */
+  overflow: hidden;
+}
+
+/* Universal Image Style for the trends */
+.trend-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Optional hover zoom effect */
+.trend-image-wrapper:hover .trend-img {
+  transform: scale(1.05);
+}
+
+/* --- FOOTER SECTION (White) --- */
+.footer-light {
+  background-color: #fff;
+  color: #000;
+  padding: 5rem 10vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem; /* Spacing between columns */
+}
+
+.footer-col {
+  flex: 1; 
+}
+
+/* Gives the newsletter slightly more width so the text fits nicely */
+.footer-newsletter {
+  flex: 1.5; 
+}
+
+.footer-col h4 {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* Vertical spacing between links */
+}
+
+.footer-col a {
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: opacity 0.2s;
+}
+
+.footer-col a:hover {
+  opacity: 0.7;
+}
+
+/* Newsletter Specifics */
+.footer-newsletter p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 1.5rem 0;
+}
+
+.newsletter-input-group {
+  display: flex;
+  width: 100%;
+  border: 1px solid #000; /* The black box around both inputs */
+}
+
+.newsletter-input-group input {
+  flex: 1; /* Takes up all remaining space */
+  padding: 0.8rem 1rem;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+.newsletter-input-group button {
+  background: #fff;
+  color: #000;
+  border: none;
+  border-left: 1px solid #000; /* The dividing line */
+  padding: 0 1.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.newsletter-input-group button:hover {
+  background: #000;
+  color: #fff;
 }
