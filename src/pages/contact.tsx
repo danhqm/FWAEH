@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './contact.css';
-import { FwaehLogo } from '../icons/FwaehLogo';
+import { FwaehLogo } from '../assets/logo/FwaehLogo';
 
 // 1. IMPORT YOUR BACKGROUND IMAGE HERE
 // Replace this URL with your local import later (e.g., import skatePark from '../assets/skatepark.jpg';)
@@ -10,29 +10,6 @@ const heroBg = "src/assets/skatepark.jpg";
 const Contact: React.FC = () => {
   return (
     <div className="contact-page">
-      
-      {/* HEADER SECTION */}
-      <header className="header">
-        <div className="logo">
-          <FwaehLogo width={120} color="#FFFF" /><span>©</span>
-        </div>
-        
-        <nav className="nav-links">
-                  <Link to="/">Home</Link>
-                  <Link to="/product">Product</Link>
-                  <Link to="/contact" className="active">Contact</Link>
-                </nav>
-
-        <div className="header-actions">
-          <div className="search-bar">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="text" placeholder="Search" />
-          </div>
-          <button className="icon-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-          <button className="icon-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg></button>
-          <button className="icon-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
-        </div>
-      </header>
 
       {/* CONTACT HERO SECTION */}
       <section 
@@ -139,51 +116,6 @@ const Contact: React.FC = () => {
 
         </div>
       </section>
-
-      {/* FOOTER SECTION */}
-      <footer className="footer-light">
-        
-        {/* Column 1: Customer Service */}
-        <div className="footer-col">
-          <h4>CUSTOMER SERVICE</h4>
-          <ul>
-            <li><Link to="/faq">FAQ</Link></li>
-            <li><Link to="/shipping">Shipping & Returns</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-          </ul>
-        </div>
-
-        {/* Column 2: Company */}
-        <div className="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><Link to="/disclaimer">Disclaimer</Link></li>
-            <li><Link to="/cookies">Cookie Statement</Link></li>
-            <li><Link to="/terms">Terms and Conditions</Link></li>
-          </ul>
-        </div>
-
-        {/* Column 3: Account */}
-        <div className="footer-col">
-          <h4>Account</h4>
-          <ul>
-            <li><Link to="/register">Register</Link></li>
-            <li><Link to="/login">Login</Link></li>
-            <li><Link to="/orders">My Orders</Link></li>
-          </ul>
-        </div>
-
-        {/* Column 4: Newsletter */}
-        <div className="footer-col footer-newsletter">
-          <h4>News Letter</h4>
-          <p>Subscribe to our newsletter and stay updated on the latest collections and special offers</p>
-          <div className="newsletter-input-group">
-            <input type="email" placeholder="Join our mailing list" />
-            <button type="submit">SUBSCRIBE</button>
-          </div>
-        </div>
-
-      </footer>
       
     </div>
   );
