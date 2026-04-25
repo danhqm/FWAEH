@@ -18,12 +18,17 @@
   font-weight: 600;
 }
 
-.nav-links a, 
-.nav-links .active {
+.nav-links a {
   color: #eeebdd;
   cursor: pointer;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.nav-links a.active {
+  text-underline-offset: 6px; 
+  text-decoration-thickness: 2px; 
+  opacity: 1;
 }
 
 .nav-links a:hover {

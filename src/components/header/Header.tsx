@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FwaehLogo } from '../../assets/logo/FwaehLogo';
 import './Header.css';
 
@@ -11,9 +11,9 @@ const Header: React.FC = () => {
       </div>
       
       <nav className="nav-links">
-        <Link to="/" className="active">Home</Link>
-        <Link to="/product">Product</Link>
-        <Link to="/contact">Contact</Link>
+        <NavLink to="/" end>Home</NavLink>
+        <NavLink to="/product">Product</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
       </nav>
 
       <div className="header-actions">
