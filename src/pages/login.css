@@ -1,81 +1,10 @@
+/* --- GLOBAL LOGIN --- */
 .login-page {
   font-family: 'Poppins', system-ui, sans-serif;
   min-height: 100vh;
   background-color: #fcfcfc;
   display: flex;
   flex-direction: column;
-}
-
-/* --- HEADER STYLES --- */
-.header {
-  background-color: #000;
-  color: #eeebdd;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem 4rem;
-}
-
-.logo h1 {
-  font-size: 2rem;
-  font-style: italic;
-  font-weight: 900;
-  margin: 0;
-  letter-spacing: -1px;
-}
-
-.logo span {
-  font-size: 0.8rem;
-  font-weight: normal;
-  vertical-align: super;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.nav-links a {
-  cursor: pointer;
-}
-
-.nav-links .active {
-  border-bottom: 2px solid #eeebdd;
-  padding-bottom: 4px;
-}
-
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  gap: 0.5rem;
-}
-
-.search-bar input {
-  border: none;
-  outline: none;
-  background: transparent;
-  width: 120px;
-  font-size: 0.9rem;
-}
-
-.icon-btn {
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
 }
 
 /* --- MAIN CONTENT STYLES --- */
@@ -85,7 +14,7 @@
   align-items: center;
   flex: 1;
   padding: 4rem;
-  gap: 32rem;
+  gap: 32rem; 
 }
 
 /* Left Side: Login Form */
@@ -177,7 +106,7 @@
   font-weight: 800;
   font-style: italic;
   font-size: 0.9rem;
-    color: #171a1f;
+  color: #171a1f;
 }
 
 .signup-prompt .light-italic {
