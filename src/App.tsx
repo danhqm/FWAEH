@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
+import ProductDetail from './components/productdetail/productdetail';
 
 import Login from './pages/login'
 import Register from './pages/register';
@@ -20,6 +21,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/product" element={<Product />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
       </Routes>
     <Footer />
     </BrowserRouter>

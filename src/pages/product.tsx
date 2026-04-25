@@ -63,7 +63,7 @@ const Product: React.FC = () => {
           {/* Top Product Grid (4 items) */}
           <div className="product-grid">
             {[1, 2, 3, 4].map((item) => (
-              <div className="product-card" key={`top-${item}`}>
+              <Link to={`/product/top-${item}`} className="product-card" key={`top-${item}`}>
                 <div className="card-image-placeholder">
                    <svg width="40" height="40" viewBox="0 0 100 100" fill="none"><rect width="100" height="100" fill="#E6E6E6" rx="4"></rect><circle cx="43" cy="40" r="10" fill="#CCCCCC"></circle><path d="M20 75L40 50L60 65L80 40L90 55V75H20Z" fill="#CCCCCC"></path></svg>
                 </div>
@@ -71,7 +71,7 @@ const Product: React.FC = () => {
                   <p className="card-title">Lorem Psem<br/>Niger 1</p>
                   <span className="card-price">MYR100</span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
@@ -81,7 +81,7 @@ const Product: React.FC = () => {
           {/* Bottom Product Grid (8 items) */}
           <div className="product-grid">
             {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-              <div className="product-card" key={`bottom-${item}`}>
+              <Link to={`/product/bottom-${item}`} className="product-card" key={`bottom-${item}`}>
                 <div className="card-image-placeholder">
                   <svg width="40" height="40" viewBox="0 0 100 100" fill="none"><rect width="100" height="100" fill="#E6E6E6" rx="4"></rect><circle cx="43" cy="40" r="10" fill="#CCCCCC"></circle><path d="M20 75L40 50L60 65L80 40L90 55V75H20Z" fill="#CCCCCC"></path></svg>
                 </div>
@@ -89,7 +89,7 @@ const Product: React.FC = () => {
                   <p className="card-title">Lorem Psem<br/>Niger 1</p>
                   <span className="card-price">MYR100</span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
