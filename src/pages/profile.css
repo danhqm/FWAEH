@@ -32,7 +32,7 @@
 /* --- LEFT SIDEBAR --- */
 .profile-sidebar {
   width: 280px;
-  background-color: #111; /* Slightly lighter than black to stand out */
+  background-color: #111; 
   border: 1px solid #333;
   border-radius: 12px;
   padding: 3rem 2rem;
@@ -49,7 +49,7 @@
 .avatar-circle {
   width: 120px;
   height: 120px;
-  background-color: #5c0505; /* Your brand's dark red */
+  background-color: #5c0505; 
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -139,7 +139,7 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: #D84040; /* Red underline for active tab */
+  background-color: #D84040; 
 }
 
 /* --- FORM SECTIONS --- */
@@ -281,4 +281,200 @@
 .checkbox-text {
   font-size: 0.9rem;
   color: #ccc;
+}
+
+/* =========================================
+   ORDER HISTORY & WISHLIST STYLES 
+   (These were failing to apply previously!)
+   ========================================= */
+
+/* --- ORDER HISTORY STYLES --- */
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.order-card {
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #222;
+  padding-bottom: 1rem;
+}
+
+.order-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.order-id {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #eeebdd;
+}
+
+.order-date {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* Status Badges */
+.order-status {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+.order-status.delivered {
+  background-color: rgba(46, 204, 113, 0.1);
+  color: #2ecc71;
+  border: 1px solid #2ecc71;
+}
+
+.order-status.pending {
+  background-color: rgba(241, 196, 15, 0.1);
+  color: #f1c40f;
+  border: 1px solid #f1c40f;
+}
+
+.order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.order-item-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px dashed #333;
+  padding-top: 1rem;
+}
+
+.total-label {
+  font-weight: 600;
+  color: #888;
+}
+
+.total-amount {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #D84040;
+}
+
+/* --- WISHLIST STYLES --- */
+.wishlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.wishlist-card {
+  background-color: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #222;
+  transition: transform 0.2s;
+}
+
+.wishlist-card:hover {
+  transform: translateY(-5px);
+  border-color: #444;
+}
+
+.wishlist-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background-color: #222;
+}
+
+.wishlist-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.remove-wishlist-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.remove-wishlist-btn:hover {
+  background-color: #D84040;
+}
+
+.wishlist-details {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.wishlist-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #eeebdd;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.wishlist-price {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+}
+
+.add-to-cart-btn {
+  background-color: transparent;
+  color: #D84040;
+  border: 1px solid #D84040;
+  padding: 0.6rem 0;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #D84040;
+  color: #fff;
 }

@@ -7,7 +7,7 @@ import Register from './pages/register';
 import Landing from './pages/landing';
 import Contact from './pages/contact';
 import Product from './pages/product';
-import Profile from './pages/Profile';
+import Profile from './pages/profile';
 
 function App() {
   return (
