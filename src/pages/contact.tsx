@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
         </div>
         
         <nav className="nav-links">
-                  <Link to="/landing">Home</Link>
+                  <Link to="/">Home</Link>
                   <Link to="/product">Product</Link>
                   <Link to="/contact" className="active">Contact</Link>
                 </nav>
