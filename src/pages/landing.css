@@ -355,3 +355,23 @@
 .trend-image-wrapper:hover .trend-img {
   transform: scale(1.05);
 }
+
+/* --- Add this to prevent horizontal scrollbars during the animation --- */
+.discover-more-section {
+  overflow-x: hidden; 
+}
+
+/* --- Base state: Hidden and pushed to the right --- */
+.section-heading-left {
+  opacity: 0;
+  transform: translateX(150px); /* Pushes it 150px to the right initially */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Controls the speed and smoothness */
+  
+  /* Keep your existing font sizes, margins, colors, etc., here! */
+}
+
+/* --- Active state: Triggered by React when scrolled into view --- */
+.section-heading-left.slide-in-right {
+  opacity: 1;
+  transform: translateX(0); /* Snaps it back to its original left position */
+}
