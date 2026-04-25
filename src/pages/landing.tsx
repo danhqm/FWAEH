@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FwaehLogo } from '../icons/FwaehLogo';
 import './landing.css';
 
 import decksImg from '../assets/decks.jpg';
