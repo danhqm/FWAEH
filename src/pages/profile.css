@@ -1,0 +1,284 @@
+/* --- GLOBAL PROFILE PAGE --- */
+.profile-page {
+  font-family: 'Poppins', system-ui, sans-serif;
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-main {
+  flex: 1;
+  padding: 4rem 10vw;
+}
+
+.profile-header h2 {
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: 900;
+  margin: 0 0 3rem 0;
+  color: #edece8;
+  letter-spacing: 1px;
+}
+
+/* --- LAYOUT CONTAINER --- */
+.profile-container {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+/* --- LEFT SIDEBAR --- */
+.profile-sidebar {
+  width: 280px;
+  background-color: #111; /* Slightly lighter than black to stand out */
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.avatar-container {
+  margin-bottom: 1.5rem;
+}
+
+.avatar-circle {
+  width: 120px;
+  height: 120px;
+  background-color: #5c0505; /* Your brand's dark red */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #fff;
+}
+
+.avatar-initials {
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-style: italic;
+  color: #fff;
+}
+
+.sidebar-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  color: #eeebdd;
+}
+
+.sidebar-email {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0 0 3rem 0;
+}
+
+.sign-out-btn {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #5c0505;
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s;
+}
+
+.sign-out-btn:hover {
+  background-color: #5c0505;
+}
+
+/* --- RIGHT CONTENT AREA --- */
+.profile-content {
+  flex: 1;
+  background-color: #0a0a0a;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 2.5rem 3.5rem;
+}
+
+/* --- TABS --- */
+.profile-tabs {
+  display: flex;
+  gap: 2rem;
+  border-bottom: 1px solid #333;
+  margin-bottom: 3rem;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0 0 1rem 0;
+  cursor: pointer;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.tab-btn:hover {
+  color: #fff;
+}
+
+.tab-btn.active {
+  color: #fff;
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #D84040; /* Red underline for active tab */
+}
+
+/* --- FORM SECTIONS --- */
+.form-section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 800;
+  margin: 0 0 2rem 0;
+  color: #eeebdd;
+}
+
+.form-row {
+  display: flex;
+  gap: 2rem;
+}
+
+.form-row .input-group {
+  flex: 1;
+}
+
+/* Form Inputs matching your aesthetic */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.input-group label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input-group input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #555;
+  color: #fff;
+  padding: 0.5rem 0;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+  border-bottom: 2px solid #fff;
+}
+
+.input-group input:disabled {
+  color: #666;
+  border-bottom: 1px dashed #333;
+  cursor: not-allowed;
+}
+
+/* Specific Buttons inside forms */
+.text-link-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+}
+
+.text-link-btn:hover {
+  color: #D84040;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #333;
+}
+
+.save-btn {
+  background-color: #D84040;
+  color: white;
+  border: none;
+  padding: 0.9rem 3.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.save-btn:hover {
+  background-color: #b03030;
+}
+
+/* --- EMPTY STATES (For Orders & Wishlist) --- */
+.empty-state {
+  text-align: center;
+  padding: 4rem 0;
+  color: #888;
+}
+
+.empty-state p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.shop-now-btn {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 0.8rem 2.5rem;
+  border-radius: 25px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Reusing Checkbox from Register */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+.custom-checkbox {
+  width: 1.2rem;
+  height: 1.2rem;
+  accent-color: #D84040;
+}
+.checkbox-text {
+  font-size: 0.9rem;
+  color: #ccc;
+}
