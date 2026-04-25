@@ -1,22 +1,24 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer'; 
 import Login from './pages/login'
 import Register from './pages/register';
 import Landing from './pages/landing';
 import Contact from './pages/contact';
 import Product from './pages/product';
-import './App.css'
 
 function App() {
   return (
     <BrowserRouter>
+    <Header />
       <Routes>
+        <Route path="/" element={<Landing />} />        
         <Route path="/login" element={<Login onLogin={() => {}}/>} />
-        <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/register" element={<Register onRegister={() => {}} />} />
-        <Route path="/landing" element={<Landing />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/product" element={<Product />} />
       </Routes>
+    <Footer />
     </BrowserRouter>
   )
 }
