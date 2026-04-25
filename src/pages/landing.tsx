@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './landing.css';
+import { FwaehLogo } from '../icons/FwaehLogo';
 
 import decksImg from '../assets/decks.jpg';
 import clothing from '../assets/clothing.jpg';
@@ -61,7 +62,7 @@ const Landing: React.FC = () => {
       {/* HEADER SECTION */}
       <header className="header">
         <div className="logo">
-          <h1>FWAEH<span>©</span></h1>
+          <FwaehLogo width={120} color="#FFFF" /><span>©</span>
         </div>
         
         <nav className="nav-links">
