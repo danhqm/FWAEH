@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './contact.css';
 import { FwaehLogo } from '../assets/logo/FwaehLogo';
 

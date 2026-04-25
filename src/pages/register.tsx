@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./register.css";
-import { FwaehLogo } from "../assets/logo/FwaehLogo";
-import { Link } from "react-router-dom";
 
 interface RegisterProps {
   onRegister: () => void;

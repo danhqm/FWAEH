@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./login.css";
 import { Link } from "react-router-dom";
-import { FwaehLogo } from "../assets/logo/FwaehLogo";
 
 interface LoginProps {
   onLogin: () => void;

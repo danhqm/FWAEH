@@ -1,4 +1,4 @@
-/* HEADER STYLES */
+/* --- HEADER STYLES --- */
 .header {
   display: flex;
   align-items: center;
@@ -6,35 +6,54 @@
   background-color: #000;
 }
 
+/* LOGO SECTION */
 .logo {
   flex: 1;
   display: flex;
   justify-content: flex-start;
+  color: #fff; /* Ensures the logo text is white */
 }
 
+.logo h1 {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  font-size: 0.8rem;
+  font-weight: normal;
+  vertical-align: super;
+}
+
+/* NAVIGATION LINKS */
 .nav-links {
   display: flex;
-  gap: 2.5rem;
+  gap: 2rem;
   font-weight: 600;
+  font-size: 14px;
 }
 
 .nav-links a {
-  color: #eeebdd;
   cursor: pointer;
+  color: #eeebdd;
   text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.nav-links a.active {
-  text-underline-offset: 6px; 
-  text-decoration-thickness: 2px; 
-  opacity: 1;
+  transition: opacity 0.2s ease;
 }
 
 .nav-links a:hover {
   opacity: 0.7;
 }
 
+/* Active Link Underline (Using NavLink active class) */
+.nav-links a.active {
+  border-bottom: 2px solid #eeebdd;
+  padding-bottom: 4px;
+}
+
+/* HEADER ACTIONS (Search and Icons) */
 .header-actions {
   flex: 1;
   display: flex;
@@ -43,7 +62,39 @@
   gap: 1.5rem;
 }
 
-.header-actions .search-bar input { 
-  color: #fff; 
-  border-bottom: 1px solid #fff;
+/* The White Pill-Shaped Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  gap: 0.5rem;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 120px;
+  font-size: 0.9rem;
+  color: #000;
+}
+
+.search-bar input::placeholder {
+  color: #666;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+}
+
+.icon-btn:hover {
+  opacity: 0.7;
 }
