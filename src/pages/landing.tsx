@@ -1,25 +1,30 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FwaehLogo } from '../icons/FwaehLogo';
 import './landing.css';
 
 import decksImg from '../assets/decks.jpg';
 import clothing from '../assets/clothing.jpg';
+import skate1 from '../assets/skate1.jpg';
+import deck1 from '../assets/deck1.png';
 
 const featuredProducts = [
-  { id: 1, name: "Zero X50 Skate", subtitle: "Deck Only", price: "MYR100", image: "https://images.unsplash.com/photo-1520045892732-304bc3ac5d8e?auto=format&fit=crop&q=80&w=400" },
-  { id: 2, name: "Classic Grip", subtitle: "Black", price: "MYR35", image: "https://images.unsplash.com/photo-1564982752979-3f7ba97481c6?auto=format&fit=crop&q=80&w=400" },
-  { id: 3, name: "Spitfire Wheels", subtitle: "52mm", price: "MYR120", image: "https://images.unsplash.com/photo-1498622205843-3b0ac17be8aa?auto=format&fit=crop&q=80&w=400" },
-  { id: 4, name: "FWAEH Bearings", subtitle: "ABEC 9", price: "MYR80", image: "https://images.unsplash.com/photo-1555580216-bd51df4bdf73?auto=format&fit=crop&q=80&w=400" },
-  { id: 5, name: "Vans Old Skool", subtitle: "Pro Edition", price: "MYR250", image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&q=80&w=400" },
-  { id: 6, name: "FWAEH Hoodie", subtitle: "Black/Red", price: "MYR180", image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&q=80&w=400" },
-  { id: 7, name: "Skate Tool", subtitle: "All-in-One", price: "MYR50", image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=400" },
-  { id: 8, name: "Ricta Clouds", subtitle: "Soft Wheels", price: "MYR110", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400" },
-  { id: 9, name: "Independent Trucks", subtitle: "Stage 11", price: "MYR150", image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=400" },
-  { id: 10, name: "FWAEH Cap", subtitle: "Snapback", price: "MYR70", image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=400" },
+  { id: 1, name: "Wave Deck", subtitle: "Deck", price: "MYR100", image: deck1 },
+  { id: 2, name: "Classic Grip", subtitle: "Deck", price: "MYR35", image: skate1 },
+  { id: 3, name: "Spitfire Wheels", subtitle: "Clothing", price: "MYR120", image: clothing },
+  { id: 4, name: "FWAEH Bearings", subtitle: "Clothing", price: "MYR80", image: decksImg },
+  { id: 5, name: "Vans Old Skool", subtitle: "Shoes", price: "MYR250", image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&q=80&w=400" },
+  { id: 6, name: "FWAEH Hoodie", subtitle: "Shoes", price: "MYR180", image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&q=80&w=400" },
+  { id: 7, name: "Skate Tool", subtitle: "Deck", price: "MYR50", image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=400" },
+  { id: 8, name: "Ricta Clouds", subtitle: "Deck", price: "MYR110", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400" },
+  { id: 9, name: "Independent Trucks", subtitle: "Clothing", price: "MYR150", image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=400" },
+  { id: 10, name: "FWAEH Cap", subtitle: "Clothing", price: "MYR70", image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=400" },
 ];
 
 const Landing: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -53,7 +58,32 @@ const Landing: React.FC = () => {
     }, 2500); 
 
     return () => clearInterval(interval);
-  }, [isHovered]); 
+  }, [isHovered]);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // When the element enters the viewport, set isVisible to true
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          // Optional: Stop observing once it animates in so it doesn't repeat
+          if (headingRef.current) observer.unobserve(headingRef.current);
+        }
+      },
+      { threshold: 0.2 } // Triggers when 20% of the heading is visible
+    );
+
+    if (headingRef.current) {
+      observer.observe(headingRef.current);
+    }
+
+    // Cleanup observer on unmount
+    return () => {
+      if (headingRef.current) observer.unobserve(headingRef.current);
+    };
+  }, []);
+
+  
 
   return (
     <div className="landing-page">
@@ -61,11 +91,11 @@ const Landing: React.FC = () => {
       {/* HEADER SECTION */}
       <header className="header">
         <div className="logo">
-          <h1>FWAEH<span>©</span></h1>
+          <FwaehLogo width={120} color="#FFFF" />
         </div>
         
         <nav className="nav-links">
-          <Link to="/" className="active">Home</Link>
+          <Link to="/landing" className="active">Home</Link>
           <Link to="/product">Product</Link>
           <Link to="/contact">Contact</Link>
         </nav>
@@ -134,27 +164,30 @@ const Landing: React.FC = () => {
 
       {/* DISCOVER MORE SECTION */}
       <section className="discover-more-section">
-        <h2 className="section-heading-left">DISCOVER MORE</h2>
+        {/* 3. Attach the ref and toggle a CSS class based on the visibility state */}
+        <h2 
+          ref={headingRef} 
+          className={`section-heading-left ${isVisible ? 'slide-in-right' : ''}`}
+        >
+          DISCOVER MORE
+        </h2>
         
         <div className="discover-grid-container">
-          
           <div className="discover-large-block">
             <img src={decksImg} alt="Discover Large" className="discover-img" />
             <button className="shop-now-btn">Shop Now</button>
           </div>
 
           <div className="discover-small-stack">
-            
             <div className="discover-small-block">
               <img src={clothing} alt="Discover Small Top" className="discover-img" />
               <button className="shop-now-btn">Shop Now</button>
             </div>
             
             <div className="discover-small-block">
-              <img src={decksImg} alt="Discover Small Bottom" className="discover-img" />
+              <img src={skate1} alt="Discover Small Bottom" className="discover-img" />
               <button className="shop-now-btn">Shop Now</button>
             </div>
-
           </div>
         </div>
       </section>

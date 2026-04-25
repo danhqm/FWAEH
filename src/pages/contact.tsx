@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
       {/* HEADER SECTION */}
       <header className="header">
         <div className="logo">
-          <FwaehLogo width={120} color="#FFFF" /><span>©</span>
+          <FwaehLogo width={120} color="#FFFF" />
         </div>
         
         <nav className="nav-links">
