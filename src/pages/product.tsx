@@ -14,14 +14,6 @@ const Product: React.FC = () => {
         <span className="breadcrumbs-text">FWAEH &gt; Product &gt; All</span>
       </div>
 
-      {/* --- MAIN PRODUCT CONTENT AREA (PLACEHOLDER) --- */}
-      <main className="product-content">
-        <div className="placeholder-image-container">
-          {/* Mimic standard placeholder graphic (mountain & sun) */}
-          <img src={heroBg} alt="Product Placeholder" className="placeholder-image" />
-        </div>
-      </main>
-
       {/* --- MAIN PRODUCT CATALOG AREA --- */}
       <main className="product-catalog">
         
@@ -31,6 +23,7 @@ const Product: React.FC = () => {
           <ul className="sidebar-menu">
             {/* The 'active' class adds that khaki/olive background pill */}
             <li className="active">All</li>
+            <li>Limited Time</li>
             <li>New Arrivals</li>
             <li>Tees</li>
             <li>Shoes</li>
