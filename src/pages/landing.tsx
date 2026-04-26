@@ -87,6 +87,18 @@ const Landing: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [timeLeft, setTimeLeft] = useState(82800);
+
+  const formatTime = (totalSeconds: number) => {
+    const h = Math.floor(totalSeconds / 3600)
+      .toString()
+      .padStart(2, "0");
+    const m = Math.floor((totalSeconds % 3600) / 60)
+      .toString()
+      .padStart(2, "0");
+    const s = (totalSeconds % 60).toString().padStart(2, "0");
+    return `${h}:${m}:${s}`;
+  };
 
   const handleScroll = () => {
     if (scrollRef.current) {
@@ -98,6 +110,19 @@ const Landing: React.FC = () => {
       }
     }
   };
+
+  useEffect(() => {
+    // Stop the timer if it hits zero
+    if (timeLeft <= 0) return;
+
+    // Decrease the time by 1 every 1000ms (1 second)
+    const timerId = setInterval(() => {
+      setTimeLeft((prevTime) => prevTime - 1);
+    }, 1000);
+
+    // Cleanup function
+    return () => clearInterval(timerId);
+  }, [timeLeft]);
 
   // The Infinite Auto-Scroll Logic
   useEffect(() => {
@@ -183,7 +208,7 @@ const Landing: React.FC = () => {
               <circle cx="12" cy="12" r="10"></circle>
               <polyline points="12 6 12 12 16 14"></polyline>
             </svg>
-            <span>23:00:00 — Grab while you can!</span>
+            <span>{formatTime(timeLeft)} — Grab while you can!</span>
           </div>
           {/* Enhancement 1: Route to Product page with a state indicating "Limited Time" */}
           <Link

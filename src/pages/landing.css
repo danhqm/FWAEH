@@ -98,6 +98,9 @@
   margin: 0 0 1rem 0;
   letter-spacing: 1px;
   color: #edece8;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6), 
+               6px 6px 0px rgba(0, 0, 0, 0.9);
+
 }
 
 .fresh-hot-timer {
@@ -226,6 +229,9 @@
   margin: 0 0 1.5rem 0;
   color: #edece8; 
   letter-spacing: 1px;
+  text-shadow: 3px 3px 0px #444, 
+               6px 6px 0px #222;
+
 }
 
 .discover-grid-container {

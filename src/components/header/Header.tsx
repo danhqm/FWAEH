@@ -10,10 +10,10 @@ const Header: React.FC = () => {
   return (
     <>
       <header className="header">
-        <div className="logo">
+        <Link to="/" className="logo">
           <FwaehLogo width={120} color="#FFFF" />
           <span>©</span>
-        </div>
+        </Link>
 
         <nav className="nav-links">
           <NavLink to="/" end>
@@ -24,7 +24,6 @@ const Header: React.FC = () => {
         </nav>
 
         <div className="header-actions">
-
           {/* Heart/Wishlist Icon - Now a Link! */}
           <Link to="/profile?tab=wishlist" className="icon-btn">
             <svg
