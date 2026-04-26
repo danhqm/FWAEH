@@ -1,0 +1,478 @@
+/* --- GLOBAL PAGE --- */
+.checkout-page {
+  font-family: 'Poppins', system-ui, sans-serif;
+  background-color: #000;
+  color: #eeebdd;
+  min-height: 100vh;
+  padding: 4rem 8vw;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #eeebdd;
+  letter-spacing: 0.2px;
+  font-style: italic;
+}
+
+/* --- TWO COLUMN LAYOUT --- */
+.checkout-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start; /* Prevents columns from stretching to match heights */
+}
+
+.checkout-left-column {
+  flex: 2; /* Takes up 2/3 of the space */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.checkout-right-column {
+  flex: 1; /* Takes up 1/3 of the space */
+}
+
+/* --- GENERIC BOX STYLING --- */
+.checkout-box {
+  background-color: #000;
+  border: 1px solid #eeebdd;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.box-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #eeebdd;
+}
+
+/* --- 1. ORDER SUMMARY TABLE --- */
+.table-header {
+  display: flex;
+  background-color: #810000; /* Brand Dark Red */
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.table-row {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid #222;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.table-row:last-child { border-bottom: none; }
+
+/* Grid alignments for the table columns */
+.col-name { flex: 2; }
+.col-text { flex: 1; text-align: center; }
+.col-qty { 
+  flex: 1; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.qty-dropdown {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #eeebdd; /* Subtle grey border */
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.qty-dropdown:hover {
+  border-color: #eeebdd; /* Brightens when hovered */
+}
+
+/* Keeps the actual menu options dark when you click to open it */
+.qty-dropdown option {
+  background-color: #000;
+  color: #eeebdd;
+}
+
+.col-total { flex: 1; text-align: right; font-weight: 800; }
+.col-action { width: 40px; text-align: right; }
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #666; /* Subtler grey by default so it isn't distracting */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.delete-btn:hover {
+  color: #D84040; /* Flashes bright red only when they hover over it! */
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item-img-placeholder {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.edit-icon { font-size: 0.8rem; color: #888; cursor: pointer; }
+.delete-btn { background: none; border: none; color: #D84040; font-size: 1.2rem; cursor: pointer; }
+
+/* --- 2. DELIVERY OPTIONS --- */
+.courier-radios {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+
+.courier-radios label { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; }
+
+/* Customizing the radio button color slightly */
+.courier-radios input[type="radio"] { accent-color: #D84040; }
+
+.delivery-cards {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.del-card {
+  flex: 1;
+  border-radius: 8px;
+  padding: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.del-card.active {
+  background-color: #810000;
+  color: #fff;
+  border: 1px solid #810000;
+}
+
+.del-card:not(.active) {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #fff;
+}
+
+.del-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.del-price { font-size: 1.2rem; font-weight: 800; }
+.del-type { font-size: 0.9rem; font-weight: 700; margin: 0 0 0.2rem 0; }
+.del-est { font-size: 0.75rem; margin: 0; opacity: 0.8; }
+
+/* --- 3. CUSTOMER INFORMATION --- */
+.customer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #eeebdd;
+}
+
+.input-group input {
+  background-color: white;
+  color :#000;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+.checkbox-label input[type="checkbox"] { accent-color: #D84040; }
+
+.delivery-note-box {
+  background-color: #810000;
+  border-radius: 6px;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+
+.note-text h4 { margin: 0 0 0.2rem 0; font-size: 0.85rem; font-weight: 700; }
+.note-text p { margin: 0; font-size: 0.75rem; line-height: 1.4; opacity: 0.9; }
+
+/* --- RIGHT COLUMN / SUMMARY BOX --- */
+.summary-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* Separates Payment, Voucher, and Math sections */
+  position: sticky; /* Optional: Makes the box follow you if the left column gets super long */
+  top: 2rem;
+}
+
+.summary-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.summary-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #eeebdd;
+}
+
+/* --- PAYMENT UI --- */
+.change-link {
+  font-size: 0.75rem;
+  color: #888;
+  cursor: pointer;
+  margin-top: -0.8rem;
+  transition: color 0.2s;
+}
+
+.change-link:hover { color: #fff; }
+
+.payment-card-ui {
+  background-color: #810000; /* Brand Dark Red */
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.card-digits {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* --- VOUCHER UI --- */
+.voucher-input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.voucher-input-group input {
+  flex: 1;
+  padding: 0.8rem;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.apply-btn {
+  background-color: #810000;
+  color: #eeebdd;
+  border: none;
+  padding: 0 1.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.apply-btn:hover { opacity: 0.8; }
+
+.applied-voucher {
+  margin-top: 0.2rem;
+}
+
+.voucher-tag {
+  background-color: #00c853; /* The exact bright green from your image */
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+}
+
+/* --- SUMMARY MATH UI --- */
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #bbb; /* Slightly faded text for labels */
+}
+
+.row-value {
+  color: #eeebdd;
+  font-weight: 700;
+}
+
+.summary-divider {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 0.5rem 0;
+}
+
+.total-row {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #eeebdd;
+  margin-top: 0.5rem;
+}
+
+/* --- PROCEED BUTTON --- */
+.proceed-btn {
+  background-color: #810000;
+  color: #eeebdd;
+  border: none;
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  margin-top: 0.5rem;
+}
+
+.proceed-btn:hover { 
+  background-color: #9c0e0e; /* Slightly brighter red on hover */
+}
+
+.proceed-btn:active {
+  transform: scale(0.98); /* Satisfying 'click' push-in effect */
+}
+
+/* ========================================= */
+/* RELATED PRODUCTS SECTION                  */
+/* ========================================= */
+.related-products-section {
+  margin-top: 6rem; /* Gives plenty of breathing room below the checkout area */
+  padding-top: 3rem;
+  border-top: 1px solid #222; /* Subtle divider line */
+}
+
+.related-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #eeebdd;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.related-card {
+  background-color: #fff; /* Solid white card */
+  border-radius: 12px;
+  padding: 0.9rem; 
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Adds a slight shadow on hover */
+}
+
+.related-img-placeholder {
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  height: 280px; /* Taller portrait aspect ratio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.related-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  color: #000;
+}
+
+.related-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.related-price {
+  font-size: 1rem;
+  font-weight: 800;
+}

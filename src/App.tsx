@@ -3,6 +3,9 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import ScrollToTop from './components/scrollToTop/scrollToTop';
 import ProductDetail from './components/productdetail/productdetail';
+import Checkout from './components/checkout/checkout';
+import CartSidebar from './components/cart/cartsidebar';
+
 
 import Login from './pages/login'
 import Register from './pages/register';
@@ -17,6 +20,7 @@ function App() {
     <BrowserRouter>
     <ScrollToTop />
     <Header />
+    <CartSidebar />
       <Routes>
         <Route path="/" element={<Landing />} />        
         <Route path="/login" element={<Login onLogin={() => {}}/>} />
@@ -26,6 +30,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/support" element={<Support />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     <Footer />
     </BrowserRouter>
