@@ -10,10 +10,10 @@ const Header: React.FC = () => {
   return (
     <>
       <header className="header">
-        <div className="logo">
+        <Link to="/" className="logo">
           <FwaehLogo width={120} color="#FFFF" />
           <span>©</span>
-        </div>
+        </Link>
 
         <nav className="nav-links">
           <NavLink to="/" end>
@@ -24,23 +24,6 @@ const Header: React.FC = () => {
         </nav>
 
         <div className="header-actions">
-          <div className="search-bar">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#000"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <input type="text" placeholder="Search" />
-          </div>
-
           {/* Heart/Wishlist Icon - Now a Link! */}
           <Link to="/profile?tab=wishlist" className="icon-btn">
             <svg
