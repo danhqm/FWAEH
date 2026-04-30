@@ -15,7 +15,6 @@ const Header: React.FC = () => {
     <header className="header">
       <Link to="/" className="logo">
         <FwaehLogo width={120} color="#FFFF" />
-        <span>©</span>
       </Link>
 
       <nav className="nav-links">
