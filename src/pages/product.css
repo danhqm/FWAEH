@@ -247,6 +247,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .card-details {
@@ -389,4 +390,40 @@
 .newsletter-input-group button:hover {
   background: #000;
   color: #fff;
+}
+
+/* --- WISHLIST HEART BUTTON --- */
+.wishlist-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white circle */
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #888; /* Gray outline by default */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  z-index: 10; /* Ensures it stays above the image */
+}
+
+/* Tiny pop animation when hovered */
+.wishlist-btn:hover {
+  transform: scale(1.1);
+  color: #555;
+}
+
+/* When the item is wishlisted (active state) */
+.wishlist-btn.active {
+  color: #D84040; /* Your brand red */
+}
+
+/* Fills the heart with solid color when active */
+.wishlist-btn.active svg {
+  fill: #D84040; 
 }

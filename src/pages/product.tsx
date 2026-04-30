@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './product.css';
 import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
 
 import guy from '../assets/guyskate.jpg';
 
 const heroBg = "src/assets/skatepark.jpg";
+
 
 const CATEGORIES = ['All', 'Limited Time', 'New Arrivals', 'Tees', 'Shoes', 'Skate Deck'];
 
@@ -21,6 +23,26 @@ const MOCK_PRODUCTS = [
 ];
 
 const Product: React.FC = () => {
+
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+
+  // 2. Update the toggle function
+  const toggleWishlist = (e: React.MouseEvent, product: any) => {
+    e.preventDefault(); 
+    
+    if (isInWishlist(product.id)) {
+      // If it's already in there, remove it
+      removeFromWishlist(product.id);
+    } else {
+      // If it's not, add it!
+      addToWishlist({
+        product_id: product.id,
+        name: product.title,
+        price: parseInt(product.price.replace(/\D/g, '')) || 100, // Converts "MYR100" to 100
+        image: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=400&q=80' // Replace with your real image
+      });
+    }
+  };
 
   const navigate = useNavigate();
   const { addToCart, closeCart } = useCart();
@@ -107,9 +129,21 @@ const Product: React.FC = () => {
           <div className="product-grid">
             {topProducts.map((product) => (
               <Link to={`/product/${product.id}`} className="product-card" key={product.id}>
+                
                 <div className="card-image-placeholder">
-                   <svg width="40" height="40" viewBox="0 0 100 100" fill="none"><rect width="100" height="100" fill="#E6E6E6" rx="4"></rect><circle cx="43" cy="40" r="10" fill="#CCCCCC"></circle><path d="M20 75L40 50L60 65L80 40L90 55V75H20Z" fill="#CCCCCC"></path></svg>
+                  <svg width="40" height="40" viewBox="0 0 100 100" fill="none"><rect width="100" height="100" fill="#E6E6E6" rx="4"></rect><circle cx="43" cy="40" r="10" fill="#CCCCCC"></circle><path d="M20 75L40 50L60 65L80 40L90 55V75H20Z" fill="#CCCCCC"></path></svg>
+                  
+                  {/* WISHLIST BUTTON FOR TOP GRID */}
+                  <button 
+                    className={`wishlist-btn ${isInWishlist(product.id) ? 'active' : ''}`}
+                    onClick={(e) => toggleWishlist(e, product)}
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                  </button>
                 </div>
+                
                 <div className="card-details">
                   <p className="card-title">{product.title}</p>
                   <span className="card-price">{product.price}</span>
@@ -127,9 +161,21 @@ const Product: React.FC = () => {
               <div className="product-grid">
                 {bottomProducts.map((product) => (
                   <Link to={`/product/${product.id}`} className="product-card" key={product.id}>
+                    
                     <div className="card-image-placeholder">
                       <svg width="40" height="40" viewBox="0 0 100 100" fill="none"><rect width="100" height="100" fill="#E6E6E6" rx="4"></rect><circle cx="43" cy="40" r="10" fill="#CCCCCC"></circle><path d="M20 75L40 50L60 65L80 40L90 55V75H20Z" fill="#CCCCCC"></path></svg>
+                      
+                      {/* WISHLIST BUTTON FOR BOTTOM GRID */}
+                      <button 
+                        className={`wishlist-btn ${isInWishlist(product.id) ? 'active' : ''}`}
+                        onClick={(e) => toggleWishlist(e, product)}
+                      >
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                      </button>
                     </div>
+                    
                     <div className="card-details">
                       <p className="card-title">{product.title}</p>
                       <span className="card-price">{product.price}</span>

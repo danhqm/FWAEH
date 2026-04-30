@@ -1,11 +1,29 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
+import { useWishlist } from '../context/WishlistContext';
+import { useCart } from '../context/CartContext';
 import "./Profile.css";
 
 const Profile: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const activeTab = searchParams.get("tab") || "general";
+
+  const { wishlistItems, removeFromWishlist } = useWishlist();
+  const { addToCart } = useCart();
+
+  const handleMoveToCart = (item: any) => {
+    addToCart({
+      product_id: item.product_id,
+      name: item.name,
+      price: item.price,
+      quantity: 1,
+      image: item.image,
+      size: 'M' // Default size
+    });
+    // Optional: Remove it from wishlist once added to cart
+    removeFromWishlist(item.product_id); 
+  };
 
   const handleTabChange = (tabName: string) => {
     setSearchParams({ tab: tabName });
@@ -226,43 +244,39 @@ const Profile: React.FC = () => {
               {activeTab === "wishlist" && (
                 <div className="tab-pane">
                   <h4 className="section-title">Your Wishlist</h4>
-                  <div className="wishlist-grid">
-                    {mockWishlist.map((item) => (
-                      <div key={item.product_id} className="wishlist-card">
-                        <div className="wishlist-img-wrapper">
-                          <img
-                            src={item.image}
-                            alt={item.name}
-                            className="wishlist-img"
-                          />
-                          <button className="remove-wishlist-btn">
-                            <svg
-                              width="18"
-                              height="18"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            >
-                              <line x1="18" y1="6" x2="6" y2="18"></line>
-                              <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                          </button>
+                  
+                  {wishlistItems.length === 0 ? (
+                    <p style={{ color: '#888', marginTop: '1rem' }}>Your wishlist is empty. Go break some hearts!</p>
+                  ) : (
+                    <div className="wishlist-grid">
+                      {/* Now mapping over the REAL wishlistItems! */}
+                      {wishlistItems.map((item) => (
+                        <div key={item.product_id} className="wishlist-card">
+                          <div className="wishlist-img-wrapper">
+                            <img src={item.image} alt={item.name} className="wishlist-img" />
+                            
+                            {/* Hooked up the remove button */}
+                            <button className="remove-wishlist-btn" onClick={() => removeFromWishlist(item.product_id)}>
+                              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                              </svg>
+                            </button>
+                          </div>
+                          
+                          <div className="wishlist-details">
+                            <h5 className="wishlist-name">{item.name}</h5>
+                            <p className="wishlist-price">RM {item.price.toFixed(2)}</p>
+                            
+                            {/* Hooked up the Move to Cart button! */}
+                            <button className="add-to-cart-btn" onClick={() => handleMoveToCart(item)}>
+                              Move to Cart
+                            </button>
+                          </div>
                         </div>
-                        <div className="wishlist-details">
-                          <h5 className="wishlist-name">{item.name}</h5>
-                          <p className="wishlist-price">
-                            RM {item.price.toFixed(2)}
-                          </p>
-                          <button className="add-to-cart-btn">
-                            Move to Cart
-                          </button>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
             </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { FwaehLogo } from "../../assets/logo/FwaehLogo";
 import { useCart } from '../../context/CartContext';
+import { useWishlist } from '../../context/WishlistContext';
 import "./Header.css";
 
 const Header: React.FC = () => {
@@ -10,6 +11,10 @@ const Header: React.FC = () => {
 
   // 2. Calculate how many total items are in the cart for the badge
   const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+  const { wishlistItems } = useWishlist();
+
+  const totalWishlistItems = wishlistItems.length;
 
   return (
     <header className="header">
@@ -24,11 +29,20 @@ const Header: React.FC = () => {
       </nav>
 
       <div className="header-actions">
-        {/* Heart/Wishlist Icon */}
-        <Link to="/profile?tab=wishlist" className="icon-btn">
+        {/* Heart/Wishlist Icon - Now with a Badge! */}
+        <Link 
+          to="/profile?tab=wishlist" 
+          className="icon-btn"
+          style={{ position: 'relative' }} // 3. Added relative positioning so the badge floats properly
+        >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
           </svg>
+          
+          {/* 4. Render the badge if there are items in the wishlist! */}
+          {totalWishlistItems > 0 && (
+            <span className="cart-badge">{totalWishlistItems}</span>
+          )}
         </Link>
 
         {/* Bag/Cart Icon - Now triggers global openCart! */}
